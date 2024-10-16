@@ -57,6 +57,9 @@
       <!-- 오른쪽 사이드 디스플레이 화면 -->
       <a-plane id="rightside01" src='#rightside01Image' position="1.6 0.2 9" width="1" height="1.3" rotation="0 -80 0" material="opacity: 0.9" visible="false"></a-plane>
 
+      <!-- VR 진입 버튼 -->
+      <a-plane id="enterVrButton" position="0 0.5 2" width="0.5" height="0.2" color="#FF5733" material="opacity: 0.8" text="value: Enter VR; align: center; color: white" class="clickable"></a-plane>
+
     </a-scene>
 
     <script>
@@ -64,6 +67,7 @@
         let button1 = document.querySelector('#button1');
         let rightside01 = document.querySelector('#rightside01');
         let homeButton = document.querySelector('#homeButton');
+        let enterVrButton = document.querySelector('#enterVrButton');
 
         // 컨트롤러를 사용하여 버튼 클릭 이벤트
         button1.addEventListener('click', function() {
@@ -77,10 +81,14 @@
           window.location.href = 'index.html';
         });
 
+        // VR 모드로 전환
+        enterVrButton.addEventListener('click', function() {
+          document.querySelector('a-scene').enterVR();
+          console.log('VR 모드로 전환되었습니다.');
+        });
       });
     </script>
   </body>
 </html>
-
 
 
