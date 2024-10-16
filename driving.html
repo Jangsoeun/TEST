@@ -32,7 +32,7 @@
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
 
       <!-- 카메라와 커서 추가 (마우스 클릭용, 컨트롤러를 사용하므로 필요하지 않으면 삭제 가능) -->
-      <a-camera position="0 -5 9" rotation="0 0 0">
+      <a-camera position="0 0 9" rotation="0 0 0">
         <a-cursor rayOrigin="mouse" fuse="false"
         material="color: white; shader: flat;"
         geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
@@ -40,7 +40,7 @@
       </a-camera>
 
       <!-- 3D 모델 및 Sky 추가 -->
-      <a-entity gltf-model="#PBV" position="2 6 0" rotation="0 270 0"></a-entity>
+      <a-entity gltf-model="#PBV" position="2 0 0" rotation="0 270 0"></a-entity>
       <a-sky src="#background"></a-sky>
 
       <!-- Driving Images -->
