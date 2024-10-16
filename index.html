@@ -23,14 +23,14 @@
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
 
+
       <!-- 카메라와 기본 커서 설정 -->
-      <a-entity position="-0.2 -1.45 9.65" rotation="0 0 0">
+      <a-entity position="0 1.6 0">
         <a-camera>
-          <!-- 기존 a-cursor를 사용할 경우 -->
           <a-cursor rayOrigin="mouse" fuse="false"
-          material="color: white; shader: flat;"
-          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
-        </a-cursor>
+            material="color: white; shader: flat;"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
+          </a-cursor>
         </a-camera>
       </a-entity>
 
