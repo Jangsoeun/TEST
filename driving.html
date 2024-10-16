@@ -13,7 +13,7 @@
       <img id="background" src="./img/background2.jpg">
         
       <a-assets> 
-<!--         <img id="background" src="./img/background.jpg">
+        <img id="background" src="./img/background.jpg">
         <img id="hud" src="./img/01/hud.png"> 
         <img id="driving1" src="./img/01/driving1.png">
         <img id="driving2" src="./img/01/driving2.png">
@@ -23,7 +23,7 @@
         <img id="rightside01Image" src="./img/01/side_01.png" visible="false">
         <img id="rightside02" src="./img/01/side_02.png">
         <img id="control01" src="./img/01/control.png">
-        <img id="button1Image" src="./img/01/button1text.png" visible="false"> <!-- 버튼 이미지 추가 --> -->
+        <img id="button1Image" src="./img/01/button1text.png" visible="false"> <!-- 버튼 이미지 추가 -->
         <a-asset-item id="PBV" src="./glb/13.glb"></a-asset-item>
       </a-assets>
 
@@ -31,8 +31,8 @@
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
 
-      <!-- 카메라와 커서 추가 (마우스 클릭용, 컨트롤러를 사용하므로 필요하지 않으면 삭제 가능) -->
-      <a-camera position="0 0 0" rotation="0 0 35">
+      <!-- 카메라와 커서 추가 -->
+      <a-camera position="0 1.6 0" look-controls>
         <a-cursor rayOrigin="mouse" fuse="false"
         material="color: white; shader: flat;"
         geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
@@ -40,10 +40,10 @@
       </a-camera>
 
       <!-- 3D 모델 및 Sky 추가 -->
-      <a-entity gltf-model="#PBV" position="2.2 -0.5 -5" rotation="0 270 0"></a-entity>
+      <a-entity gltf-model="#PBV" position="0 0 -1" rotation="0 0 0"></a-entity>
       <a-sky src="#background"></a-sky>
 
-<!--       <!-- Driving Images -->
+      <!-- Driving Images -->
       <a-plane id="driving1Plane" position="0 0 8.9" geometry="primitive: plane; height: 0.3; width: 1; scale:0.8" material="src: #driving1; opacity: 0.9" rotation="0 0 0" visible="false"
                animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"></a-plane>
 
@@ -55,11 +55,11 @@
                animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;" class="clickable"></a-plane>
 
       <!-- 오른쪽 사이드 디스플레이 화면 -->
-      <a-plane id="rightside01" src='#rightside01Image' position="1.6 0.2 9" width="1" height="1.3" rotation="0 -80 0" material="opacity: 0.9" visible="false"></a-plane> -->
+      <a-plane id="rightside01" src='#rightside01Image' position="1.6 0.2 9" width="1" height="1.3" rotation="0 -80 0" material="opacity: 0.9" visible="false"></a-plane>
 
     </a-scene>
 
-<!--     <script>
+    <script>
       document.addEventListener('DOMContentLoaded', function() {
         let button1 = document.querySelector('#button1');
         let rightside01 = document.querySelector('#rightside01');
@@ -78,7 +78,8 @@
         });
 
       });
-    </script> -->
+    </script>
   </body>
 </html>
+
 
