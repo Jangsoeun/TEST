@@ -19,14 +19,12 @@
         <img id="alarm2" src="./img/background/alarm2.png">
       </a-assets>
 
-      <!-- 오른손 및 왼손 컨트롤러 -->
+      <!— 오른손 및 왼손 컨트롤러 —>
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
 
-      <!-- 카메라와 기본 커서 설정 -->
-      <a-entity position="-0.2 -1.45 9.65" rotation="0 0 0">
+      <a-entity position="-0.2 -1.45 9.65" rotation="0 35 0">
         <a-camera>
-          <!-- 기존 a-cursor를 사용할 경우 -->
           <a-cursor rayOrigin="mouse" fuse="false"
           material="color: white; shader: flat;"
           geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
@@ -41,7 +39,7 @@
         width="4" 
         height="2" 
         material="color: #FFFFFF; opacity: 0" 
-        rotation="0 0 0">
+        rotation="0 35 0">
 
         <!-- Driving Image -->
         <a-image 
@@ -49,8 +47,7 @@
           src="#driving" 
           position="-0.8 0 0"  
           width="0.5" 
-          height="0.6" 
-          class="clickable"></a-image>
+          height="0.6"></a-image>
 
         <!-- Music Image -->
         <a-image 
@@ -58,8 +55,7 @@
           src="#music" 
           position="-0.2 0 0"  
           width="0.5" 
-          height="0.6" 
-          class="clickable"></a-image>
+          height="0.6"></a-image>
 
         <!-- Entertainment Image -->
         <a-image 
@@ -67,8 +63,7 @@
           src="#entertainment" 
           position="0.4 0 0"  
           width="0.5" 
-          height="0.6" 
-          class="clickable"></a-image>
+          height="0.6"></a-image>
 
         <!-- Alarm Image -->
         <a-image 
@@ -76,8 +71,7 @@
           src="#alarm" 
           position="1 0 0"  
           width="0.5" 
-          height="0.6" 
-          class="clickable"></a-image>
+          height="0.6"></a-image>
       </a-plane>
 
       <!-- VR Mode Button -->
@@ -126,4 +120,5 @@
 
   </body>
 </html>
+
 
