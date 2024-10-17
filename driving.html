@@ -33,10 +33,12 @@
 
       <!-- 3D 모델 -->
       <a-entity gltf-model="#PBV" position="2 1 0" rotation="0 270 0"></a-entity>
-      <a-sky src="#background"></a-sky>
+      <a-sky src="#background"></a-sky
+                                 
+<!--       material="src: #driving1; -->
 
       <!-- Driving Images -->
-      <a-plane id="driving1Plane" position="0 0 0.1" geometry="primitive: plane; height: 0.3; width: 1" material="src: #driving1; opacity: 0.9" visible="false"
+      <a-plane id="driving1Plane" position="2 1 0.5" geometry="primitive: plane; height: 0.3; width: 1"material="color: #FF5733;  opacity: 0.9" visible="false"
                animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"></a-plane>
 
       <!-- MAIN 화면 -->
