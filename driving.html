@@ -10,71 +10,54 @@
       <a-image id="homeButton" src="./img/icon/home-icon.png" position="-1.1 0.7 0" rotation="0 0 0" width="0.2" height="0.2" class="clickable" 
                material="opacity: 0.9"></a-image>
 
-      <img id="background" src="./img/background2.jpg">
-        
       <a-assets> 
         <img id="background" src="./img/background.jpg">
         <img id="hud" src="./img/01/hud.png"> 
         <img id="driving1" src="./img/01/driving1.png">
-        <img id="driving2" src="./img/01/driving2.png">
         <img id="driving3" src="./img/01/driving3.png">
         <img id="main01" src="./img/01/main_lg.png">
         <img id="main02" src="./img/01/main_m.png">
-        <img id="rightside01Image" src="./img/01/side_01.png" visible="false">
-        <img id="rightside02" src="./img/01/side_02.png">
-        <img id="control01" src="./img/01/control.png">
-        <img id="button1Image" src="./img/01/button1text.png" visible="false"> <!-- 버튼 이미지 추가 -->
+        <img id="rightside01Image" src="./img/01/side_01.png">
         <a-asset-item id="PBV" src="./glb/13.glb"></a-asset-item>
       </a-assets>
 
-      <!-- 오른손, 왼손 컨트롤러 -->
+      <!-- 컨트롤러 -->
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
 
-      <!-- 카메라와 커서 추가 -->
-      <a-camera position="0 1.6 1" rotation="0 0 0">
-        <a-cursor rayOrigin="mouse" fuse="false"
-        material="color: white; shader: flat;"
-        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
+      <!-- 카메라와 커서 -->
+      <a-camera position="0 1.6 1">
+        <a-cursor rayOrigin="mouse" fuse="false" material="color: white; shader: flat;" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
         </a-cursor>
       </a-camera>
 
-      <!-- 3D 모델 및 Sky 추가 -->
+      <!-- 3D 모델 -->
       <a-entity gltf-model="#PBV" position="2 1 0" rotation="0 270 0"></a-entity>
       <a-sky src="#background"></a-sky>
 
       <!-- Driving Images -->
-      <a-plane id="driving1Plane" position="0 0 0.1" geometry="primitive: plane; height: 0.3; width: 1; scale:0.8" material="src: #driving1; opacity: 0.9" rotation="0 0 0" visible="false"
+      <a-plane id="driving1Plane" position="0 0 0.1" geometry="primitive: plane; height: 0.3; width: 1" material="src: #driving1; opacity: 0.9" visible="false"
                animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"></a-plane>
 
-      <!-- MAIN 화면들 -->
-      <a-plane id="main01Plane" position="0 0 0.1" geometry="primitive: plane; height: 0.6; width: 1" material="src: #main01; opacity: 0.9" rotation="0 0 0" visible="false"
-               animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"class="clickable"></a-plane>
-      <a-plane id="main02Plane" position="0.5 0.2 0.1" geometry="primitive: plane; height: 0.5; width: 0.4" material="src: #main02; opacity: 0.9" rotation="0 0 0" visible="false"
-               animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"class="clickable"></a-plane>
-      <a-plane id="button1" position="0 0 0.2" geometry="primitive: plane; height: 0.5; width: 0.7" material="src: #button1Image; opacity: 0.9" rotation="0 0 0" visible="false"
-              animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"class="clickable"></a-plane>
+      <!-- MAIN 화면 -->
+      <a-plane id="main01Plane" position="0 0 0.1" geometry="primitive: plane; height: 0.6; width: 1" material="src: #main01; opacity: 0.9" visible="false"
+               animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"></a-plane>
 
-      <!-- 주행 시작 메시지 -->
-      <a-plane id="messageBackground" position="0 -0.6 0.1" rotation="0 35 0" geometry="primitive: plane; height: 0.1; width: 1" material="color: black; opacity: 0.5" visible="false"></a-plane>
-      <a-text id="messageText" value="주행을 시작합니다!" position="-0.7 -0.6 9" rotation="0 35 0" material="color: white; opacity: 0.9" width="5" height="1" align="center" visible="false"class="clickable"></a-text>
+      <a-plane id="main02Plane" position="0.5 0.2 0.1" geometry="primitive: plane; height: 0.5; width: 0.4" material="src: #main02; opacity: 0.9" visible="false"
+               animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"></a-plane>
 
-      <!-- HUD 화면 추가 -->
-      <a-plane id="hudPlane" position="-0.5 -0.4 0.1" rotation="0 0 0" geometry="primitive: plane; height: 0.2; width: 0.4" material="src: #hud; opacity: 0.9" visible="false"class="clickable"></a-plane>
+      <!-- 주행 메시지 -->
+      <a-plane id="messageBackground" position="0 -0.6 0.1" geometry="primitive: plane; height: 0.1; width: 1" material="color: black; opacity: 0.5" visible="false"></a-plane>
+      <a-text id="messageText" value="주행을 시작합니다!" position="-0.7 -0.6 0.1" material="color: white; opacity: 0.9" width="5" height="1" align="center" visible="false"></a-text>
 
+      <!-- HUD -->
+      <a-plane id="hudPlane" position="-0.5 -0.4 0.1" geometry="primitive: plane; height: 0.2; width: 0.4" material="src: #hud; opacity: 0.9" visible="false"></a-plane>
 
-      <!-- 오른쪽 사이드 디스플레이 화면 -->
-      <a-plane id="rightside01" src='#rightside01Image' position="1.6 0.2 0.1" width="1" height="1.3" rotation="0 -80 0" material="opacity: 0.9" visible="false"class="clickable"></a-plane>
-
-      <!-- VR Mode Button -->
-      <a-plane id="button1" position="0 0 9" geometry="primitive: plane; height: 0.5; width: 0.7" material="src: #button1Image; opacity: 0.9" rotation="0 0 0" visible="false"
-               animation="property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;" class="clickable"></a-plane>
-
-      <!-- 오른쪽 사이드 디스플레이 화면 -->
-      <a-plane id="rightside01" src='#rightside01Image' position="1.6 0.2 0" width="1" height="1.3" rotation="0 -80 0" material="opacity: 0.9" visible="false"></a-plane>
+      <!-- 오른쪽 사이드 디스플레이 -->
+      <a-plane id="rightside01" position="1.6 0.2 0.1" width="1" height="1.3" material="src: #rightside01Image; opacity: 0.9" visible="false"></a-plane>
 
       <!-- VR 진입 버튼 -->
-      <a-plane id="enterVrButton" position="0 0.5 2" width="0.5" height="0" color="#FF5733" material="opacity: 0.8" text="value: Enter VR; align: center; color: white" class="clickable"></a-plane>
+      <a-plane id="enterVrButton" position="0 0.5 2" geometry="primitive: plane; height: 0.5; width: 0.7" material="color: #FF5733; opacity: 0.8" text="value: Enter VR; align: center; color: white" class="clickable"></a-plane>
 
     </a-scene>
 
@@ -87,93 +70,54 @@
         let messageBackground = document.querySelector('#messageBackground');
         let messageText = document.querySelector('#messageText');
         let hudPlane = document.querySelector('#hudPlane');
-        let hoverText = document.querySelector('#hoverText');
         let button1 = document.querySelector('#button1');
         let rightside01 = document.querySelector('#rightside01');
         let homeButton = document.querySelector('#homeButton');
         let enterVrButton = document.querySelector('#enterVrButton');
 
-        // 컨트롤러를 사용하여 버튼 클릭 이벤트
-        button1.addEventListener('click', function() {
-          rightside01.setAttribute('visible', 'true');
-          console.log('버튼이 클릭되었습니다.');
-        });
-
-        // 1. 5초 후 driving1 이미지 나타남
+        // 애니메이션 타이밍
         setTimeout(function() {
           driving1Plane.setAttribute('visible', true);
           driving1Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
         }, 5000);
 
-        // 2. driving1이 3초 후 사라지고 driving3 나타남
         setTimeout(function() {
           driving1Plane.setAttribute('animation__opacity', 'property: opacity; from: 0.9; to: 0; dur: 1000; easing: easeInOutQuad;');
           driving1Plane.setAttribute('visible', false);
           driving3Plane.setAttribute('visible', true);
-          driving3Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
-        }, 8000); // 5초 + 3초
+        }, 8000);
 
-        // 3. driving3가 3초 후 위로 이동하고 main_lg 나타남
         setTimeout(function() {
-          driving3Plane.object3D.position.y += 0.4;
           main01Plane.setAttribute('visible', true);
           main01Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
-        }, 11000); // 8초 + 3초
+        }, 11000);
 
-        // 4. 5초 후 driving3와 main_lg가 사라지고 main_m 나타남
         setTimeout(function() {
-          driving3Plane.setAttribute('animation__opacity', 'property: opacity; from: 0.9; to: 0; dur: 1000; easing: easeInOutQuad;');
-          driving3Plane.setAttribute('visible', false);
-          main01Plane.setAttribute('animation__opacity', 'property: opacity; from: 0.9; to: 0; dur: 1000; easing: easeInOutQuad;');
           main01Plane.setAttribute('visible', false);
           main02Plane.setAttribute('visible', true);
-          main02Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
           messageBackground.setAttribute('visible', true);
           messageText.setAttribute('visible', true);
           hudPlane.setAttribute('visible', true);
-        }, 16000); // 11초 + 5초
+        }, 16000);
 
-        // 5. main_m가 5초 후 사라짐
         setTimeout(function() {
-          main02Plane.setAttribute('animation__opacity', 'property: opacity; from: 0.9; to: 0; dur: 1000; easing: easeInOutQuad;');
           main02Plane.setAttribute('visible', false);
-        }, 21000); // 16초 + 5초
+        }, 21000);
 
         setTimeout(() => {
-        button1.setAttribute('visible', 'true');
-        
-        // visible이 true가 된 후에 이벤트를 등록합니다.
-        button1.addEventListener('click', function() {
-          rightside01.setAttribute('visible', 'true');
-          console.log('버튼이 클릭되었습니다.');
-        });
-
-        console.log('버튼이 나타났습니다.');
-      }, 21000);
-
+          button1.setAttribute('visible', 'true');
+        }, 21000);
 
         // 홈 버튼 클릭 시 index.html로 돌아가기
         homeButton.addEventListener('click', function() {
-          console.log('홈버튼이 클릭되었습니다.');
           window.location.href = 'index.html';
         });
-
-        // 홈 버튼 클릭 시 index.html로 돌아가기
-        homeButton.addEventListener('click', function() {
-          console.log('홈버튼이 클릭되었습니다.');
-          window.location.href = 'index.html';
-        });
-
-        
 
         // VR 모드로 전환
         enterVrButton.addEventListener('click', function() {
           document.querySelector('a-scene').enterVR();
-          console.log('VR 모드로 전환되었습니다.');
         });
       });
     </script>
-  </body>
-</html>
-
+  </
 
