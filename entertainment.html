@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <a-scene>
@@ -52,13 +51,12 @@
         </a-cursor>
       </a-camera>
 
-
       <!-- 3D 모델 -->
-      <a-entity gltf-model="#PBV" position="2 1 0" rotation="0 270 0"></a-entity>
+      <a-entity id="pbvEntity" gltf-model="#PBV" position="2 1 0" rotation="0 270 0"></a-entity>
       <a-sky src="#background"></a-sky>
 
         <!-- 이미지 그룹 -->
-        <a-entity id="thumbnailGroup"position="0 1.6 -0.8">
+        <a-entity id="thumbnailGroup" position="0 1.6 -0.8">
             <a-plane id="mainbgPlane" position="0 0 -0.1" width="1.2" height="0.7" 
             material="src: #mainbg; opacity: 0.8" draggable></a-plane>
             <a-plane class="thumbnail" id="main01Plane" position="-0.35 0.05 -0.02" width="0.2" height="0.15" 
@@ -131,7 +129,8 @@
     </a-scene>
     
     <script>
-          document.querySelector('#pbvEntity').addEventListener('model-loaded', () => {
+      // GLB 모델이 로드되었을 때 이벤트
+      document.querySelector('#pbvEntity').addEventListener('model-loaded', () => {
         console.log('GLB 모델이 성공적으로 로드되었습니다!');
       });
 
@@ -222,13 +221,13 @@
         document.getElementById('main203Plane').setAttribute('visible', 'true');
       });
 
-       // 홈 버튼 클릭 시 index.html로 돌아가기
-        homeButton.addEventListener('click', function() {
-          console.log('홈버튼이 클릭되었습니다.');
-          window.location.href = 'index.html';
-        });
+      // 홈 버튼 클릭 시 index.html로 돌아가기
+      document.getElementById('homeButton').addEventListener('click', function() {
+        console.log('홈버튼이 클릭되었습니다.');
+        window.location.href = 'index.html';
+      });
 
-        
     </script>
 </body>
 </html>
+
