@@ -131,8 +131,8 @@
 
     </a-scene>
     
-<!--      <script>
-      document.querySelector('#pbvEntity').addEventListener('model-loaded', () => {
+    <script>
+          document.querySelector('#pbvEntity').addEventListener('model-loaded', () => {
         console.log('GLB 모델이 성공적으로 로드되었습니다!');
       });
 
@@ -193,67 +193,67 @@
         });
       });
 
-      // 재생하기 버튼 클릭 시
-      document.getElementById('playButton').addEventListener('click', () => {
-        // #main09Plane 사라지고 #main2-00Plane 보이기
-        document.getElementById('main09Plane').setAttribute('visible', 'false');
-        document.getElementById('main200Plane').setAttribute('visible', 'true');
+      // // 재생하기 버튼 클릭 시
+      // document.getElementById('playButton').addEventListener('click', () => {
+      //   // #main09Plane 사라지고 #main2-00Plane 보이기
+      //   document.getElementById('main09Plane').setAttribute('visible', 'false');
+      //   document.getElementById('main200Plane').setAttribute('visible', 'true');
 
-        // 오른쪽 사이드 화면 나타내기
-        document.getElementById('right01Plane').setAttribute('visible', 'false'); // right01Plane 사라짐
-        document.getElementById('right020Plane').setAttribute('visible', 'true');
-        document.getElementById('right021Plane').setAttribute('visible', 'true');
-        document.getElementById('right022Plane').setAttribute('visible', 'true');
-        document.getElementById('right023Plane').setAttribute('visible', 'true');
-      });
+      //   // 오른쪽 사이드 화면 나타내기
+      //   document.getElementById('right01Plane').setAttribute('visible', 'false'); // right01Plane 사라짐
+      //   document.getElementById('right020Plane').setAttribute('visible', 'true');
+      //   document.getElementById('right021Plane').setAttribute('visible', 'true');
+      //   document.getElementById('right022Plane').setAttribute('visible', 'true');
+      //   document.getElementById('right023Plane').setAttribute('visible', 'true');
+      // });
 
-      // 오른쪽 사이드 클릭 이벤트
-      document.getElementById('right021Plane').addEventListener('click', () => {
-        document.getElementById('main200Plane').setAttribute('visible', 'false');
-        document.getElementById('main201Plane').setAttribute('visible', 'true');
-      });
+      // // 오른쪽 사이드 클릭 이벤트
+      // document.getElementById('right021Plane').addEventListener('click', () => {
+      //   document.getElementById('main200Plane').setAttribute('visible', 'false');
+      //   document.getElementById('main201Plane').setAttribute('visible', 'true');
+      // });
 
-      document.getElementById('right022Plane').addEventListener('click', () => {
-        document.getElementById('main200Plane').setAttribute('visible', 'false');
-        document.getElementById('main202Plane').setAttribute('visible', 'true');
-      });
+      // document.getElementById('right022Plane').addEventListener('click', () => {
+      //   document.getElementById('main200Plane').setAttribute('visible', 'false');
+      //   document.getElementById('main202Plane').setAttribute('visible', 'true');
+      // });
 
-      document.getElementById('right023Plane').addEventListener('click', () => {
-        document.getElementById('main200Plane').setAttribute('visible', 'false');
-        document.getElementById('main203Plane').setAttribute('visible', 'true');
-      });
+      // document.getElementById('right023Plane').addEventListener('click', () => {
+      //   document.getElementById('main200Plane').setAttribute('visible', 'false');
+      //   document.getElementById('main203Plane').setAttribute('visible', 'true');
+      // });
 
-      // Chevron 버튼 클릭 처리
-      let currentLeftImageIndex = 1; // 1: left01, 2: left02, 3: left03
-      const leftImages = ['left01', 'left02', 'left03'];
+      // // Chevron 버튼 클릭 처리
+      // let currentLeftImageIndex = 1; // 1: left01, 2: left02, 3: left03
+      // const leftImages = ['left01', 'left02', 'left03'];
 
-      // Chevron Right 클릭 이벤트
-      document.getElementById('chevronRight').addEventListener('click', () => {
-        if (currentLeftImageIndex < leftImages.length) {
-          currentLeftImageIndex++;
-          document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
-        }
-        // Chevron 버튼 비활성화
-        if (currentLeftImageIndex === leftImages.length) {
-          document.getElementById('chevronRight').setAttribute('visible', 'false');
-        }
-        // Chevron Left 버튼 활성화
-        document.getElementById('chevronLeft').setAttribute('visible', 'true');
-      });
+      // // Chevron Right 클릭 이벤트
+      // document.getElementById('chevronRight').addEventListener('click', () => {
+      //   if (currentLeftImageIndex < leftImages.length) {
+      //     currentLeftImageIndex++;
+      //     document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
+      //   }
+      //   // Chevron 버튼 비활성화
+      //   if (currentLeftImageIndex === leftImages.length) {
+      //     document.getElementById('chevronRight').setAttribute('visible', 'false');
+      //   }
+      //   // Chevron Left 버튼 활성화
+      //   document.getElementById('chevronLeft').setAttribute('visible', 'true');
+      // });
 
-      // Chevron Left 클릭 이벤트
-      document.getElementById('chevronLeft').addEventListener('click', () => {
-        if (currentLeftImageIndex > 1) {
-          currentLeftImageIndex--;
-          document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
-        }
-        // Chevron 버튼 비활성화
-        if (currentLeftImageIndex === 1) {
-          document.getElementById('chevronLeft').setAttribute('visible', 'false');
-        }
-        // Chevron Right 버튼 활성화
-        document.getElementById('chevronRight').setAttribute('visible', 'true');
-      });
-    </script> -->
+      // // Chevron Left 클릭 이벤트
+      // document.getElementById('chevronLeft').addEventListener('click', () => {
+      //   if (currentLeftImageIndex > 1) {
+      //     currentLeftImageIndex--;
+      //     document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
+      //   }
+      //   // Chevron 버튼 비활성화
+      //   if (currentLeftImageIndex === 1) {
+      //     document.getElementById('chevronLeft').setAttribute('visible', 'false');
+      //   }
+      //   // Chevron Right 버튼 활성화
+      //   document.getElementById('chevronRight').setAttribute('visible', 'true');
+      // });
+    </script>
 </body>
 </html>
