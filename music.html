@@ -140,21 +140,20 @@
       const main05Plane = document.getElementById('main05Plane');
       const main06Plane = document.getElementById('main06Plane');
       const main07Plane = document.getElementById('main07Plane');
-      const playButton = document.getElementById('playButton');
+
     
       main05Plane.addEventListener('click', () => {
         console.log('main05 클릭');
         main05Plane.setAttribute('visible', 'false');  // #main05 숨기기
         main06Plane.setAttribute('visible', 'true');   // #main06 표시
-        playButton.setAttribute('visible', 'true');    // 재생하기 버튼 표시
+
       });
     
       // 재생하기 버튼 클릭 시
-      playButton.addEventListener('click', () => {
+      main06Plane.addEventListener('click', () => {
         console.log('재생하기 버튼 클릭');
         main06Plane.setAttribute('visible', 'false');  // #main06 숨기기
         main07Plane.setAttribute('visible', 'true');   // #main07 표시
-        playButton.setAttribute('visible', 'false');   // 재생하기 버튼 숨기기
       });
     </script>
     
