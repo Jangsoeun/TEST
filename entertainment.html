@@ -45,16 +45,20 @@
             <a-asset-item id="PBV" src="./glb/13.glb"></a-asset-item>
         </a-assets>
 
-        <a-camera position="0 0 10">
-            <a-cursor rayOrigin="mouse" fuse="false"
-            material="color: white; shader: flat;"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
-            </a-cursor>
-        </a-camera>
+      <!-- 컨트롤러 -->
+      <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
+      <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
 
-        <!-- PBV 모델 -->
-        <a-entity id="pbvEntity" gltf-model="#PBV" position="2 -0.5 9.8" scale="1 1 1" rotation="0 270 0"></a-entity>
-        <a-sky src="#background"></a-sky>
+      <!-- 카메라와 커서 -->
+      <a-camera position="0 1.6 1">
+        <a-cursor rayOrigin="mouse" fuse="false" material="color: white; shader: flat;" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;">
+        </a-cursor>
+      </a-camera>
+
+
+      <!-- 3D 모델 -->
+      <a-entity gltf-model="#PBV" position="2 1 0" rotation="0 270 0"></a-entity>
+      <a-sky src="#background"></a-sky>
 
         <!-- 이미지 그룹 -->
         <a-entity id="thumbnailGroup" position="0.15 0 8.5">
