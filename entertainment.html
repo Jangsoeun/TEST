@@ -111,14 +111,12 @@
             <a-plane id="right020Plane" width="1.45" height="1.2" position="1 1.6 -0.01" rotation="0 -90 0"
                      material="src: #right02; opacity: 0.9" visible="false"></a-plane>
 
-            <a-plane id="right021Plane" position="0.7 1.8 -0.01" rotation="0 -90 0" width="0.5" height="0.2" 
+            <a-plane id="right021Plane" position="1 1.8 -0.01" rotation="0 -90 0" width="0.5" height="0.2" 
                      material="src: #right02-1; opacity: 0.9" visible="false"></a-plane>
-            <a-plane id="right022Plane" position="-0.3 1.5 -0.01" rotation="0 -90 0"width="0.5" height="0.2" 
+            <a-plane id="right022Plane" position="1 1.5 -0.01" rotation="0 -90 0"width="0.5" height="0.2" 
                      material="src: #right02-2; opacity: 0.9" visible="false"></a-plane>
-            <a-plane id="right023Plane" position="-0.3 1.2 -0.01" rotation="0 -90 0" width="0.5" height="0.2" 
+            <a-plane id="right023Plane" position="1 1.2 -0.01" rotation="0 -90 0" width="0.5" height="0.2" 
                      material="src: #right02-3; opacity: 0.9" visible="false"></a-plane>
-
-
 
         
     </a-scene>
@@ -155,6 +153,20 @@
           document.getElementById('right01Plane').setAttribute('visible', 'true');
           document.getElementById('left01Plane').setAttribute('visible', 'true');
         });
+      });
+
+      // #main09Plane 클릭 시 처리
+      document.getElementById('main09Plane').addEventListener('click', () => {
+        // main09Plane 사라지고 main2-00 나타남
+        document.getElementById('main09Plane').setAttribute('visible', 'false');
+        document.getElementById('main200Plane').setAttribute('visible', 'true');
+        
+        // right01Plane 사라지고 right02 그룹이 나타남
+        document.getElementById('right01Plane').setAttribute('visible', 'false');
+        document.getElementById('right020Plane').setAttribute('visible', 'true');
+        document.getElementById('right021Plane').setAttribute('visible', 'true');
+        document.getElementById('right022Plane').setAttribute('visible', 'true');
+        document.getElementById('right023Plane').setAttribute('visible', 'true');
       });
     </script>
 </body>
