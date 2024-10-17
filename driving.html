@@ -62,51 +62,51 @@
     </a-scene>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        let driving1Plane = document.querySelector('#driving1Plane');
-        let driving3Plane = document.querySelector('#driving3Plane');
-        let main01Plane = document.querySelector('#main01Plane');
-        let main02Plane = document.querySelector('#main02Plane');
-        let messageBackground = document.querySelector('#messageBackground');
-        let messageText = document.querySelector('#messageText');
-        let hudPlane = document.querySelector('#hudPlane');
-        let button1 = document.querySelector('#button1');
-        let rightside01 = document.querySelector('#rightside01');
-        let homeButton = document.querySelector('#homeButton');
-        let enterVrButton = document.querySelector('#enterVrButton');
+      // document.addEventListener('DOMContentLoaded', function() {
+      //   let driving1Plane = document.querySelector('#driving1Plane');
+      //   let driving3Plane = document.querySelector('#driving3Plane');
+      //   let main01Plane = document.querySelector('#main01Plane');
+      //   let main02Plane = document.querySelector('#main02Plane');
+      //   let messageBackground = document.querySelector('#messageBackground');
+      //   let messageText = document.querySelector('#messageText');
+      //   let hudPlane = document.querySelector('#hudPlane');
+      //   let button1 = document.querySelector('#button1');
+      //   let rightside01 = document.querySelector('#rightside01');
+      //   let homeButton = document.querySelector('#homeButton');
+      //   let enterVrButton = document.querySelector('#enterVrButton');
 
-        // 애니메이션 타이밍
-        setTimeout(function() {
-          driving1Plane.setAttribute('visible', true);
-          driving1Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
-        }, 5000);
+      //   // 애니메이션 타이밍
+      //   setTimeout(function() {
+      //     driving1Plane.setAttribute('visible', true);
+      //     driving1Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
+      //   }, 5000);
 
-        setTimeout(function() {
-          driving1Plane.setAttribute('animation__opacity', 'property: opacity; from: 0.9; to: 0; dur: 1000; easing: easeInOutQuad;');
-          driving1Plane.setAttribute('visible', false);
-          driving3Plane.setAttribute('visible', true);
-        }, 8000);
+      //   setTimeout(function() {
+      //     driving1Plane.setAttribute('animation__opacity', 'property: opacity; from: 0.9; to: 0; dur: 1000; easing: easeInOutQuad;');
+      //     driving1Plane.setAttribute('visible', false);
+      //     driving3Plane.setAttribute('visible', true);
+      //   }, 8000);
 
-        setTimeout(function() {
-          main01Plane.setAttribute('visible', true);
-          main01Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
-        }, 11000);
+      //   setTimeout(function() {
+      //     main01Plane.setAttribute('visible', true);
+      //     main01Plane.setAttribute('animation__scale', 'property: scale; from: 0.5 0.5 1; to: 1 1 1; dur: 1000; easing: easeInOutQuad;');
+      //   }, 11000);
 
-        setTimeout(function() {
-          main01Plane.setAttribute('visible', false);
-          main02Plane.setAttribute('visible', true);
-          messageBackground.setAttribute('visible', true);
-          messageText.setAttribute('visible', true);
-          hudPlane.setAttribute('visible', true);
-        }, 16000);
+      //   setTimeout(function() {
+      //     main01Plane.setAttribute('visible', false);
+      //     main02Plane.setAttribute('visible', true);
+      //     messageBackground.setAttribute('visible', true);
+      //     messageText.setAttribute('visible', true);
+      //     hudPlane.setAttribute('visible', true);
+      //   }, 16000);
 
-        setTimeout(function() {
-          main02Plane.setAttribute('visible', false);
-        }, 21000);
+      //   setTimeout(function() {
+      //     main02Plane.setAttribute('visible', false);
+      //   }, 21000);
 
-        setTimeout(() => {
-          button1.setAttribute('visible', 'true');
-        }, 21000);
+      //   setTimeout(() => {
+      //     button1.setAttribute('visible', 'true');
+      //   }, 21000);
 
         // 홈 버튼 클릭 시 index.html로 돌아가기
         homeButton.addEventListener('click', function() {
