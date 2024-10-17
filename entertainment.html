@@ -61,43 +61,43 @@
       <a-sky src="#background"></a-sky>
 
         <!-- 이미지 그룹 -->
-        <a-entity id="thumbnailGroup" position="0.15 0 8.5">
+        <a-entity id="thumbnailGroup"position="0 1.6 -0.9">
             <a-plane id="mainbgPlane" position="-0.2 0.1 0.4" width="1.2" height="0.7" 
             material="src: #mainbg; opacity: 0.8" draggable></a-plane>
-            <a-plane class="thumbnail" id="main01Plane" position="-0.6 0.15 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main01Plane" position="-0.6 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main01; opacity: 0.9" draggable></a-plane>
-            <a-plane class="thumbnail" id="main02Plane" position="-0.35 0.15 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main02Plane" position="-0.35 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main02; opacity: 0.9" draggable></a-plane>
-            <a-plane class="thumbnail" id="main03Plane" position="-0.1 0.15 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main03Plane" position="-0.1 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main03; opacity: 0.9" draggable></a-plane>
-            <a-plane class="thumbnail" id="main04Plane" position="0.15 0.15 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main04Plane" position="0.15 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main04; opacity: 0.9" draggable></a-plane>
-            <a-plane class="thumbnail" id="main05Plane" position="-0.6 -0.05 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main05Plane" position="-0.6 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main05; opacity: 0.9" draggable></a-plane>
-            <a-plane class="thumbnail" id="main06Plane" position="-0.35 -0.05 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main06Plane" position="-0.35 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main06; opacity: 0.9" draggable></a-plane>        
-            <a-plane class="thumbnail" id="main07Plane" position="-0.1 -0.05 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main07Plane" position="-0.1 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main07; opacity: 0.9" draggable></a-plane>
-            <a-plane class="thumbnail" id="main08Plane" position="0.15 -0.05 0.45" width="0.2" height="0.15" 
+            <a-plane class="thumbnail" id="main08Plane" position="0.15 0 -0.01" width="0.2" height="0.15" 
                      material="src: #main08; opacity: 0.9" draggable></a-plane>
         </a-entity>
 
         <!-- 메인 -->
-        <a-entity position="0.15 0 8.5">
-            <a-plane id="main09Plane" position="-0.2 0.1 0.4" width="1.2" height="0.7" 
+        <a-entity position="0 1.6 -0.8">
+            <a-plane id="main09Plane" position="0 0 -1" width="1.2" height="0.7" 
                     material="src: #main09; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main200Plane" position="-0.2 0.1 0.4" width="1.2" height="0.7" 
+            <a-plane id="main200Plane" position="0 0 -1" width="1.2" height="0.7" 
                     material="src: #main2-00; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main201Plane" position="-0.2 0.1 0.4" width="1.2" height="0.7" 
+            <a-plane id="main201Plane" position="0 0 -1" width="1.2" height="0.7" 
                     material="src: #main2-01; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main202Plane" position="-0.2 0.1 0.4" width="1.2" height="0.7" 
+            <a-plane id="main202Plane" position="0 0 -1" width="1.2" height="0.7" 
                     material="src: #main2-02; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main203Plane" position="-0.2 0.1 0.4" width="1.2" height="0.7" 
+            <a-plane id="main203Plane" position="0 0 -1" width="1.2" height="0.7" 
                     material="src: #main2-03; opacity: 0.8" visible="false"></a-plane>
         </a-entity>
 
         <!-- 재생하기 버튼 -->
-        <a-plane id="playButton" position="0.2 -0.1 9" width="0.15" height="0.08" 
+        <a-plane id="playButton" position="0 1.6 -0.9" width="0.15" height="0.08" 
                  color="#4CAF50" visible="false" event-set__click="scale: 1.1 1.1 1; dur: 300">
             <a-text value="재생하기" align="center" position="0 0 0.01" color="white"></a-text>
         </a-plane>
@@ -117,7 +117,7 @@
         </a-entity>
         
         <!-- 오른쪽 사이드 -->
-        <a-entity position="1.6 0.1 9" rotation="0 -90 0">
+        <a-entity position="1 1.6 -0.01" rotation="0 -90 0">
             <a-plane id="right01Plane" width="1.45" height="1.2" 
                     material="src: #right01; opacity: 0.8" visible="false"></a-plane>
             <a-plane id="right020Plane" position="0 0 0"  width="1.45" height="1.2" 
