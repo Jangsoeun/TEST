@@ -53,31 +53,30 @@
         </a-cursor>
       </a-camera>
 
-
       <!-- 3D 모델 -->
       <a-entity gltf-model="#PBV" position="2 1 0" rotation="0 270 0"></a-entity>
       <a-sky src="#background"></a-sky>
 
         <!-- 이미지 그룹 -->
-        <a-entity id="thumbnailGroup"position="0 1.6 -0.8">
+        <a-entity id="thumbnailGroup" position="0 1.6 -0.8">
             <a-plane id="mainbgPlane" position="0 0 -0.1" width="1.2" height="0.7" 
-            material="src: #mainbg; opacity: 0.8" draggable></a-plane>
+            material="src: #mainbg; opacity: 0.8"></a-plane>
             <a-plane class="thumbnail" id="main01Plane" position="-0.35 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main01; opacity: 0.9" draggable></a-plane>
+                     material="src: #main01; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main02Plane" position="-0.1 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main02; opacity: 0.9" draggable></a-plane>
+                     material="src: #main02; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main03Plane" position="0.15 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main03; opacity: 0.9" draggable></a-plane>
+                     material="src: #main03; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main04Plane" position="0.4 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main04; opacity: 0.9" draggable></a-plane>
+                     material="src: #main04; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main05Plane" position="-0.35 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main05; opacity: 0.9" draggable></a-plane>
+                     material="src: #main05; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main06Plane" position="-0.1 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main06; opacity: 0.9" draggable></a-plane>        
+                     material="src: #main06; opacity: 0.9"></a-plane>        
             <a-plane class="thumbnail" id="main07Plane" position="0.15 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main07; opacity: 0.9" draggable></a-plane>
+                     material="src: #main07; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main08Plane" position="0.4 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main08; opacity: 0.9" draggable></a-plane>
+                     material="src: #main08; opacity: 0.9"></a-plane>
         </a-entity>
 
         <!-- 메인 -->
@@ -95,7 +94,7 @@
         </a-entity>
 
         <!-- 재생하기 버튼 -->
-        <a-plane id="playButton" position="0 1.6 -0.9" width="0.15" height="0.08" 
+        <a-plane id="playButton" position="0.2 -0.1 9" width="0.15" height="0.08" 
                  color="#4CAF50" visible="false" event-set__click="scale: 1.1 1.1 1; dur: 300">
             <a-text value="재생하기" align="center" position="0 0 0.01" color="white"></a-text>
         </a-plane>
@@ -132,7 +131,7 @@
     </a-scene>
     
     <script>
-          document.querySelector('#pbvEntity').addEventListener('model-loaded', () => {
+      document.querySelector('#pbvEntity').addEventListener('model-loaded', () => {
         console.log('GLB 모델이 성공적으로 로드되었습니다!');
       });
 
@@ -193,67 +192,67 @@
         });
       });
 
-      // // 재생하기 버튼 클릭 시
-      // document.getElementById('playButton').addEventListener('click', () => {
-      //   // #main09Plane 사라지고 #main2-00Plane 보이기
-      //   document.getElementById('main09Plane').setAttribute('visible', 'false');
-      //   document.getElementById('main200Plane').setAttribute('visible', 'true');
+      // 재생하기 버튼 클릭 시
+      document.getElementById('playButton').addEventListener('click', () => {
+        // #main09Plane 사라지고 #main2-00Plane 보이기
+        document.getElementById('main09Plane').setAttribute('visible', 'false');
+        document.getElementById('main200Plane').setAttribute('visible', 'true');
 
-      //   // 오른쪽 사이드 화면 나타내기
-      //   document.getElementById('right01Plane').setAttribute('visible', 'false'); // right01Plane 사라짐
-      //   document.getElementById('right020Plane').setAttribute('visible', 'true');
-      //   document.getElementById('right021Plane').setAttribute('visible', 'true');
-      //   document.getElementById('right022Plane').setAttribute('visible', 'true');
-      //   document.getElementById('right023Plane').setAttribute('visible', 'true');
-      // });
+        // 오른쪽 사이드 화면 나타내기
+        document.getElementById('right01Plane').setAttribute('visible', 'false'); // right01Plane 사라짐
+        document.getElementById('right020Plane').setAttribute('visible', 'true');
+        document.getElementById('right021Plane').setAttribute('visible', 'true');
+        document.getElementById('right022Plane').setAttribute('visible', 'true');
+        document.getElementById('right023Plane').setAttribute('visible', 'true');
+      });
 
-      // // 오른쪽 사이드 클릭 이벤트
-      // document.getElementById('right021Plane').addEventListener('click', () => {
-      //   document.getElementById('main200Plane').setAttribute('visible', 'false');
-      //   document.getElementById('main201Plane').setAttribute('visible', 'true');
-      // });
+      // 오른쪽 사이드 클릭 이벤트
+      document.getElementById('right021Plane').addEventListener('click', () => {
+        document.getElementById('main200Plane').setAttribute('visible', 'false');
+        document.getElementById('main201Plane').setAttribute('visible', 'true');
+      });
 
-      // document.getElementById('right022Plane').addEventListener('click', () => {
-      //   document.getElementById('main200Plane').setAttribute('visible', 'false');
-      //   document.getElementById('main202Plane').setAttribute('visible', 'true');
-      // });
+      document.getElementById('right022Plane').addEventListener('click', () => {
+        document.getElementById('main200Plane').setAttribute('visible', 'false');
+        document.getElementById('main202Plane').setAttribute('visible', 'true');
+      });
 
-      // document.getElementById('right023Plane').addEventListener('click', () => {
-      //   document.getElementById('main200Plane').setAttribute('visible', 'false');
-      //   document.getElementById('main203Plane').setAttribute('visible', 'true');
-      // });
+      document.getElementById('right023Plane').addEventListener('click', () => {
+        document.getElementById('main200Plane').setAttribute('visible', 'false');
+        document.getElementById('main203Plane').setAttribute('visible', 'true');
+      });
 
-      // // Chevron 버튼 클릭 처리
-      // let currentLeftImageIndex = 1; // 1: left01, 2: left02, 3: left03
-      // const leftImages = ['left01', 'left02', 'left03'];
+      // Chevron 버튼 클릭 처리
+      let currentLeftImageIndex = 1; // 1: left01, 2: left02, 3: left03
+      const leftImages = ['left01', 'left02', 'left03'];
 
-      // // Chevron Right 클릭 이벤트
-      // document.getElementById('chevronRight').addEventListener('click', () => {
-      //   if (currentLeftImageIndex < leftImages.length) {
-      //     currentLeftImageIndex++;
-      //     document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
-      //   }
-      //   // Chevron 버튼 비활성화
-      //   if (currentLeftImageIndex === leftImages.length) {
-      //     document.getElementById('chevronRight').setAttribute('visible', 'false');
-      //   }
-      //   // Chevron Left 버튼 활성화
-      //   document.getElementById('chevronLeft').setAttribute('visible', 'true');
-      // });
+      // Chevron Right 클릭 이벤트
+      document.getElementById('chevronRight').addEventListener('click', () => {
+        if (currentLeftImageIndex < leftImages.length) {
+          currentLeftImageIndex++;
+          document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
+        }
+        // Chevron 버튼 비활성화
+        if (currentLeftImageIndex === leftImages.length) {
+          document.getElementById('chevronRight').setAttribute('visible', 'false');
+        }
+        // Chevron Left 버튼 활성화
+        document.getElementById('chevronLeft').setAttribute('visible', 'true');
+      });
 
-      // // Chevron Left 클릭 이벤트
-      // document.getElementById('chevronLeft').addEventListener('click', () => {
-      //   if (currentLeftImageIndex > 1) {
-      //     currentLeftImageIndex--;
-      //     document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
-      //   }
-      //   // Chevron 버튼 비활성화
-      //   if (currentLeftImageIndex === 1) {
-      //     document.getElementById('chevronLeft').setAttribute('visible', 'false');
-      //   }
-      //   // Chevron Right 버튼 활성화
-      //   document.getElementById('chevronRight').setAttribute('visible', 'true');
-      // });
+      // Chevron Left 클릭 이벤트
+      document.getElementById('chevronLeft').addEventListener('click', () => {
+        if (currentLeftImageIndex > 1) {
+          currentLeftImageIndex--;
+          document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
+        }
+        // Chevron 버튼 비활성화
+        if (currentLeftImageIndex === 1) {
+          document.getElementById('chevronLeft').setAttribute('visible', 'false');
+        }
+        // Chevron Right 버튼 활성화
+        document.getElementById('chevronRight').setAttribute('visible', 'true');
+      });
     </script>
 </body>
 </html>
