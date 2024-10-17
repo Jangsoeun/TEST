@@ -122,76 +122,92 @@
     </a-scene>
     
     <script>
-      // 홈 버튼 클릭 시 index.html로 돌아가기
-      document.getElementById('homeButton').addEventListener('click', function() {
-        console.log('홈버튼이 클릭되었습니다.');
-        window.location.href = 'index.html';
-      });
-
-      // 호버 시 썸네일 크기 확대
-      const thumbnails = document.querySelectorAll('.thumbnail');
-      
-      thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('mouseenter', () => {
-          thumbnail.setAttribute('scale', '1.2 1.2 1');
+        // 홈 버튼 클릭 시 index.html로 돌아가기
+        document.getElementById('homeButton').addEventListener('click', function() {
+          console.log('홈버튼이 클릭되었습니다.');
+          window.location.href = 'index.html';
         });
-      
-        thumbnail.addEventListener('mouseleave', () => {
-          thumbnail.setAttribute('scale', '1 1 1');
-        });
-      });
-
-      // 썸네일 클릭 시 처리
-      thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-          // 썸네일 그룹 및 모든 썸네일 숨기기
-          document.getElementById('thumbnailGroup').setAttribute('visible', 'false');
-          thumbnails.forEach(thumb => thumb.setAttribute('visible', 'false'));
-          
-          // main09Plane 표시
-          document.getElementById('main09Plane').setAttribute('visible', 'true');
-          document.getElementById('right01Plane').setAttribute('visible', 'true');
-          document.getElementById('left01Plane').setAttribute('visible', 'true');
-        });
-      });
-
-      // #main09Plane 클릭 시 처리
-      document.getElementById('main09Plane').addEventListener('click', () => {
-        // main09Plane 사라지고 main2-00 나타남
-        document.getElementById('main09Plane').setAttribute('visible', 'false');
-        document.getElementById('main200Plane').setAttribute('visible', 'true');
         
-        // right01Plane 사라지고 right02 그룹이 나타남
-        document.getElementById('right01Plane').setAttribute('visible', 'false');
-        document.getElementById('right020Plane').setAttribute('visible', 'true');
-        document.getElementById('right021Plane').setAttribute('visible', 'true');
-        document.getElementById('right022Plane').setAttribute('visible', 'true');
-        document.getElementById('right023Plane').setAttribute('visible', 'true');
-      });
+        // 호버 시 썸네일 크기 확대
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        
+        thumbnails.forEach(thumbnail => {
+          thumbnail.addEventListener('mouseenter', () => {
+            thumbnail.setAttribute('scale', '1.2 1.2 1');
+          });
+        
+          thumbnail.addEventListener('mouseleave', () => {
+            thumbnail.setAttribute('scale', '1 1 1');
+          });
+        });
+        
+        // 썸네일 클릭 시 처리
+        thumbnails.forEach(thumbnail => {
+          thumbnail.addEventListener('click', () => {
+            // 썸네일 그룹 및 모든 썸네일 숨기기
+            document.getElementById('thumbnailGroup').setAttribute('visible', 'false');
+            thumbnails.forEach(thumb => thumb.setAttribute('visible', 'false'));
+            
+            // main09Plane 표시
+            document.getElementById('main09Plane').setAttribute('visible', 'true');
+            document.getElementById('right01Plane').setAttribute('visible', 'true');
+            document.getElementById('left01Plane').setAttribute('visible', 'true');
+          });
+        });
+        
+        // #main09Plane 클릭 시 처리
+        document.getElementById('main09Plane').addEventListener('click', () => {
+          // main09Plane 사라지고 main2-00 나타남
+          document.getElementById('main09Plane').setAttribute('visible', 'false');
+          document.getElementById('main200Plane').setAttribute('visible', 'true');
+          
+          // right01Plane 사라지고 right02 그룹이 나타남
+          document.getElementById('right01Plane').setAttribute('visible', 'false');
+          document.getElementById('right020Plane').setAttribute('visible', 'true');
+          document.getElementById('right021Plane').setAttribute('visible', 'true');
+          document.getElementById('right022Plane').setAttribute('visible', 'true');
+          document.getElementById('right023Plane').setAttribute('visible', 'true');
+        });
+        
+        // #right021Plane 클릭 시 main2-01 표시
+        document.getElementById('right021Plane').addEventListener('click', () => {
+          document.getElementById('main200Plane').setAttribute('visible', 'false');
+          document.getElementById('main202Plane').setAttribute('visible', 'false');
+          document.getElementById('main203Plane').setAttribute('visible', 'false');
+          document.getElementById('main201Plane').setAttribute('visible', 'true');
+        });
+        
+        // #right022Plane 클릭 시 main2-02 표시
+        document.getElementById('right022Plane').addEventListener('click', () => {
+          document.getElementById('main200Plane').setAttribute('visible', 'false');
+          document.getElementById('main201Plane').setAttribute('visible', 'false');
+          document.getElementById('main203Plane').setAttribute('visible', 'false');
+          document.getElementById('main202Plane').setAttribute('visible', 'true');
+        });
+        
+        // #right023Plane 클릭 시 main2-03 표시
+        document.getElementById('right023Plane').addEventListener('click', () => {
+          document.getElementById('main200Plane').setAttribute('visible', 'false');
+          document.getElementById('main201Plane').setAttribute('visible', 'false');
+          document.getElementById('main202Plane').setAttribute('visible', 'false');
+          document.getElementById('main203Plane').setAttribute('visible', 'true');
+        });
+        
+        // #right021Plane, #right022Plane, #right023Plane 호버 시 1.2배 확대
+        const rightPlanes = ['right021Plane', 'right022Plane', 'right023Plane'];
+        
+        rightPlanes.forEach(planeId => {
+          const plane = document.getElementById(planeId);
+        
+          plane.addEventListener('mouseenter', () => {
+            plane.setAttribute('scale', '1.2 1.2 1');
+          });
+        
+          plane.addEventListener('mouseleave', () => {
+            plane.setAttribute('scale', '1 1 1');
+          });
+        });
 
-      // #right021Plane 클릭 시 main2-01 표시
-      document.getElementById('right021Plane').addEventListener('click', () => {
-        document.getElementById('main200Plane').setAttribute('visible', 'false');
-        document.getElementById('main202Plane').setAttribute('visible', 'false');
-        document.getElementById('main203Plane').setAttribute('visible', 'false');
-        document.getElementById('main201Plane').setAttribute('visible', 'true');
-      });
-
-      // #right022Plane 클릭 시 main2-02 표시
-      document.getElementById('right022Plane').addEventListener('click', () => {
-        document.getElementById('main200Plane').setAttribute('visible', 'false');
-        document.getElementById('main201Plane').setAttribute('visible', 'false');
-        document.getElementById('main203Plane').setAttribute('visible', 'false');
-        document.getElementById('main202Plane').setAttribute('visible', 'true');
-      });
-
-      // #right023Plane 클릭 시 main2-03 표시
-      document.getElementById('right023Plane').addEventListener('click', () => {
-        document.getElementById('main200Plane').setAttribute('visible', 'false');
-        document.getElementById('main201Plane').setAttribute('visible', 'false');
-        document.getElementById('main202Plane').setAttribute('visible', 'false');
-        document.getElementById('main203Plane').setAttribute('visible', 'true');
-      });
     </script>
 </body>
 </html>
