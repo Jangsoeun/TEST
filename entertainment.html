@@ -57,88 +57,63 @@
 
         <!-- 이미지 그룹 -->
         <a-entity id="thumbnailGroup" position="0 1.6 -0.8">
-            <a-plane id="mainbgPlane" position="0 0 -0.1" width="1.2" height="0.7" 
-            material="src: #mainbg; opacity: 0.8" draggable></a-plane>
             <a-plane class="thumbnail" id="main01Plane" position="-0.35 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main01; opacity: 0.9" draggable></a-plane>
+                     material="src: #main01; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main02Plane" position="-0.1 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main02; opacity: 0.9" draggable></a-plane>
+                     material="src: #main02; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main03Plane" position="0.15 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main03; opacity: 0.9" draggable></a-plane>
+                     material="src: #main03; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main04Plane" position="0.4 0.05 -0.02" width="0.2" height="0.15" 
-                     material="src: #main04; opacity: 0.9" draggable></a-plane>
+                     material="src: #main04; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main05Plane" position="-0.35 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main05; opacity: 0.9" draggable></a-plane>
+                     material="src: #main05; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main06Plane" position="-0.1 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main06; opacity: 0.9" draggable></a-plane>        
+                     material="src: #main06; opacity: 0.9"></a-plane>        
             <a-plane class="thumbnail" id="main07Plane" position="0.15 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main07; opacity: 0.9" draggable></a-plane>
+                     material="src: #main07; opacity: 0.9"></a-plane>
             <a-plane class="thumbnail" id="main08Plane" position="0.4 -0.15 -0.02" width="0.2" height="0.15" 
-                     material="src: #main08; opacity: 0.9" draggable></a-plane>
+                     material="src: #main08; opacity: 0.9"></a-plane>
         </a-entity>
 
         <!-- 메인 -->
         <a-entity position="0 1.6 -0.8">
             <a-plane id="main09Plane" position="0 1.6 -0.1" width="1.2" height="0.7" 
-                    material="src: #main09; opacity: 0.8" visible="true"></a-plane>
-            <a-plane id="main200Plane" position="0 1.6 -0.1" width="1.2" height="0.7" 
-                    material="src: #main2-00; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main201Plane" position="0 1.6 -0.1" width="1.2" height="0.7" 
-                    material="src: #main2-01; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main202Plane" position="0 1.6 -0.1" width="1.2" height="0.7" 
-                    material="src: #main2-02; opacity: 0.8" visible="false"></a-plane>
-            <a-plane id="main203Plane" position="0 1.6 -0.1" width="1.2" height="0.7" 
-                    material="src: #main2-03; opacity: 0.8" visible="false"></a-plane>
-        </a-entity>
-
-        <!-- 재생하기 버튼 -->
-        <a-plane id="playButton" position="0 1.6 -0.9" width="0.15" height="0.08" 
-                 color="#4CAF50" visible="false" event-set__click="scale: 1.1 1.1 1; dur: 300">
-            <a-text value="재생하기" align="center" position="0 0 0.01" color="white"></a-text>
-        </a-plane>
-
-        <!-- 왼쪽 사이드 -->
-        <a-entity position="-1.7 0.1 9" rotation="0 90 0">
-            <a-plane id="left01Plane" width="1.6" height="1.2" position="-0.1 0 0"
-                    material="src: #left01; opacity: 0.8" visible="true"></a-plane>
-            <a-entity position="-0.9 -0.1 0.6"> <!-- chevrons의 위치를 조정 -->
-                <a-image id="chevronLeft" src="#chevron-left" width="0.08" height="0.08" position="0 0 0.2"
-                          event-set__mouseenter="scale: 1.1 1.1 1; dur: 300"
-                          event-set__mouseleave="scale: 1 1 1; dur: 300" visible="false"></a-image>
-                <a-image id="chevronRight" src="#chevron-right" width="0.08" height="0.08" position="0.75 0 0.2"
-                          event-set__mouseenter="scale: 1.1 1.1 1; dur: 300"
-                          event-set__mouseleave="scale: 1 1 1; dur: 300" visible="false"></a-image>
-            </a-entity>
-        </a-entity>
-        
-        <!-- 오른쪽 사이드 -->
-        <a-entity position="1 1.6 -0.01" rotation="0 -90 0">
-            <a-plane id="right01Plane" width="1.45" height="1.2" 
-                    material="src: #right01; opacity: 0.8" visible="true"></a-plane>
-            <a-plane id="right020Plane" position="0 0 0"  width="1.45" height="1.2" 
-                     material="src: #right02; opacity: 0.9" visible="false"></a-plane>
-
-            <a-plane id="right021Plane" position="-0.3 0.2 0.1" width="0.5" height="0.2" 
-                     material="src: #right02-1; opacity: 0.9" visible="false"></a-plane>
-            <a-plane id="right022Plane" position="-0.3 -0.1 0.1" width="0.5" height="0.2" 
-                     material="src: #right02-2; opacity: 0.9" visible="false"></a-plane>
-            <a-plane id="right023Plane" position="-0.3 -0.4 0.1" width="0.5" height="0.2" 
-                     material="src: #right02-3; opacity: 0.9" visible="false"></a-plane>
+                    material="src: #main09; opacity: 0.8" visible="false"></a-plane>
         </a-entity>
 
     </a-scene>
     
     <script>
-
       // 홈 버튼 클릭 시 index.html로 돌아가기
       document.getElementById('homeButton').addEventListener('click', function() {
         console.log('홈버튼이 클릭되었습니다.');
         window.location.href = 'index.html';
       });
 
-        
+      // 호버 시 썸네일 크기 확대
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      
+      thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('mouseenter', () => {
+          thumbnail.setAttribute('scale', '1.2 1.2 1');
+        });
+      
+        thumbnail.addEventListener('mouseleave', () => {
+          thumbnail.setAttribute('scale', '1 1 1');
+        });
+      });
 
+      // 썸네일 클릭 시 처리
+      thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+          // 썸네일 그룹 및 모든 썸네일 숨기기
+          document.getElementById('thumbnailGroup').setAttribute('visible', 'false');
+          thumbnails.forEach(thumb => thumb.setAttribute('visible', 'false'));
+          
+          // main09Plane 표시
+          document.getElementById('main09Plane').setAttribute('visible', 'true');
+        });
+      });
     </script>
 </body>
 </html>
-
