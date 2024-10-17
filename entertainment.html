@@ -130,36 +130,6 @@
     
     <script>
 
-    // 모든 main 클릭 시 처리
-      const mainPlanes = [
-        'main01Plane', 'main02Plane', 'main03Plane',
-        'main04Plane', 'main05Plane', 'main06Plane',
-        'main07Plane', 'main08Plane'
-      ];
-
-      mainPlanes.forEach(plane => {
-        document.getElementById(plane).addEventListener('click', () => {
-          // 모든 썸네일과 메인 배경 숨기기
-          document.getElementById('mainbgPlane').setAttribute('visible', 'false');
-          thumbnails.forEach(thumbnail => thumbnail.setAttribute('visible', 'false'));
-          
-          // 모든 mainPlanes 숨기기
-          mainPlanes.forEach(p => {
-            document.getElementById(p).setAttribute('visible', 'false');
-          });
-
-          // #main09Plane, 왼쪽 및 오른쪽 사이드 표시
-          document.getElementById('main09Plane').setAttribute('visible', 'true');
-          document.getElementById('playButton').setAttribute('visible', 'true'); // 재생하기 버튼 보이기
-          document.getElementById('right01Plane').setAttribute('visible', 'true');
-          document.getElementById('left01Plane').setAttribute('visible', 'true');
-
-          // Chevron 버튼 보이기
-          document.getElementById('chevronLeft').setAttribute('visible', 'true');
-          document.getElementById('chevronRight').setAttribute('visible', 'true');
-        });
-      });
-
       // 홈 버튼 클릭 시 index.html로 돌아가기
       document.getElementById('homeButton').addEventListener('click', function() {
         console.log('홈버튼이 클릭되었습니다.');
