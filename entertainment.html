@@ -222,37 +222,13 @@
         document.getElementById('main203Plane').setAttribute('visible', 'true');
       });
 
-      // Chevron 버튼 클릭 처리
-      let currentLeftImageIndex = 1; // 1: left01, 2: left02, 3: left03
-      const leftImages = ['left01', 'left02', 'left03'];
-
-      // Chevron Right 클릭 이벤트
-      document.getElementById('chevronRight').addEventListener('click', () => {
-        if (currentLeftImageIndex < leftImages.length) {
-          currentLeftImageIndex++;
-          document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
-        }
-        // Chevron 버튼 비활성화
-        if (currentLeftImageIndex === leftImages.length) {
-          document.getElementById('chevronRight').setAttribute('visible', 'false');
-        }
-        // Chevron Left 버튼 활성화
-        document.getElementById('chevronLeft').setAttribute('visible', 'true');
+       // 홈 버튼 클릭 시 index.html로 돌아가기
+        homeButton.addEventListener('click', function() {
+          console.log('홈버튼이 클릭되었습니다.');
+          window.location.href = 'index.html';
+        });
       });
-
-      // Chevron Left 클릭 이벤트
-      document.getElementById('chevronLeft').addEventListener('click', () => {
-        if (currentLeftImageIndex > 1) {
-          currentLeftImageIndex--;
-          document.getElementById('left01Plane').setAttribute('material', 'src: #' + leftImages[currentLeftImageIndex - 1]);
-        }
-        // Chevron 버튼 비활성화
-        if (currentLeftImageIndex === 1) {
-          document.getElementById('chevronLeft').setAttribute('visible', 'false');
-        }
-        // Chevron Right 버튼 활성화
-        document.getElementById('chevronRight').setAttribute('visible', 'true');
-      });
+        
     </script>
 </body>
 </html>
