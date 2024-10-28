@@ -10,16 +10,14 @@
       <a-image id="homeButton" src="./img/icon/home-icon.png" position="-0.8 1.95 -0.9" rotation="0 0 0" width="0.1" height="0.1" class="clickable" 
                material="opacity: 0.9"></a-image>
 
-      <a-assets> 
-        <img id="background" src="./img/background.jpg">
-        <img id="hud" src="./img/01/hud.png"> 
+<a-assets>
+  <img id="callImage" src="./img/call.png">
+  <img id="calloutImage" src="./img/callout.png">
+</a-assets>
 
-        <img id="main01" src="./img/01/main_lg.png">
-        <img id="main02" src="./img/01/main_m.png">
-   
-        <img id="button1Image" src="./img/01/button1text.png" visible="false">
-        <a-asset-item id="PBV" src="./glb/13.glb"></a-asset-item>
-      </a-assets>
+<a-plane id="callPlane" position="0 1.6 -0.9" geometry="primitive: plane; height: 0.3; width: 0.3" material="src: #callImage; opacity: 0.9" visible="false" class="clickable"></a-plane>
+
+      
 
       <!-- 컨트롤러 -->
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: #fff; opacity: 0.75"></a-entity>
@@ -69,7 +67,27 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
 
-        
+        document.addEventListener('DOMContentLoaded', function() {
+  const callPlane = document.getElementById('callPlane');
+
+  // 3초 후에 callPlane 나타남
+  setTimeout(() => {
+    callPlane.setAttribute('visible', 'true');
+  }, 3000);
+
+  // callPlane 클릭 시 이미지 변경
+  callPlane.addEventListener('click', function() {
+    console.log('call.png가 클릭되었습니다.');
+    callPlane.setAttribute('material', 'src', '#calloutImage'); // callout.png로 변경
+  });
+
+  // 홈 버튼 클릭 시 index.html로 돌아가기
+  homeButton.addEventListener('click', function() {
+    console.log('홈버튼이 클릭되었습니다.');
+    window.location.href = 'index.html';
+  });
+});
+
         // 홈 버튼 클릭 시 index.html로 돌아가기
         homeButton.addEventListener('click', function() {
           console.log('홈버튼이 클릭되었습니다.');
