@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aframe-draggable-component@3.0.1/dist/aframe-draggable-component.min.js"></script>
   </head>
@@ -8,13 +9,11 @@
     <a-scene>
       <!-- 홈 버튼 -->
       <a-image id="homeButton" src="./img/icon/home-icon.png" position="-0.8 1.95 -0.9" rotation="0 0 0" width="0.1" height="0.1" material="opacity: 0.9"></a-image>
-
+      <img id="background" src="./img/background2.jpg">
 
       <a-assets>
-        <img id="background" src="./img/background2.jpg">
         <img id="maincall" src="./img/call.png" alt="">
-        <img id="maincallout" src="./img/callout.png" alt=“">
-        <img id="hud" src="./img/01/hud.png"> 
+        <img id="maincallout" src="./img/callout.png" alt="">
         <a-asset-item id="PBV" src="./glb/13.glb"></a-asset-item>
       </a-assets>
 
@@ -32,13 +31,10 @@
       <a-sky src="#background"></a-sky>
 
       <!-- 이미지 그룹 -->
-      <a-plane id="call" position="0 1.6 -0.9" width="0.8" height="0.4" material="src: #maincall; opacity: 0.8" class="clickable"></a-plane>
-
-      <!-- HUD -->
-      <a-plane id="hudPlane" position="-0.4 1.2 -0.9" geometry="primitive: plane; height: 0.2; width: 0.4" material="src: #hud; opacity: 0.9" visible="true"></a-plane>
+      <a-plane id="call" position="-0.6 0 -0.9" width="0.3" height="0.4" material="src: #maincall; opacity: 0.8" class="clickable"></a-plane>
 
       <!-- 숨겨진 이미지들 -->
-      <a-plane id="callout" position="0.4 1.25 -0.9" width="0.6" height="0.3" material="src: #maincallout; opacity: 0.8" visible="false"></a-plane>
+      <a-plane id="callout" position="0 0 -0.01" width="1.2" height="0.6" material="src: #maincallout; opacity: 0.8" visible="false"></a-plane>
     </a-scene>
 
     <script>
@@ -51,3 +47,5 @@
       });
     </script>
   </body>
+</html>
+
