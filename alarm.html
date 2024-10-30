@@ -14,6 +14,7 @@
       <a-assets>
         <img id="maincall" src="./img/call.png" alt="">
         <img id="maincallout" src="./img/callout.png" alt="">
+        <img id="hud" src="./img/01/hud.png"> 
         <a-asset-item id="PBV" src="./glb/13.glb"></a-asset-item>
       </a-assets>
 
@@ -35,6 +36,9 @@
 
       <!-- 숨겨진 이미지들 -->
       <a-plane id="callout" position="0.4 1.25 -0.9" width="0.6" height="0.3" material="src: #maincallout; opacity: 0.8" visible="false"></a-plane>
+
+      <!-- HUD -->
+      <a-plane id="hudPlane" position="-0.4 1.2 -0.9" geometry="primitive: plane; height: 0.2; width: 0.4" material="src: #hud; opacity: 0.9" visible="true"></a-plane>
     </a-scene>
 
     <script>
