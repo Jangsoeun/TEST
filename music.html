@@ -118,19 +118,21 @@
       ];
     
       clickableElements.forEach(element => addHoverEffect(element));
-    
-      // 모든 썸네일 클릭 시 #main05 표시
+
+
+      // 모든 썸네일 클릭 시 main05Plane 표시하고 thumbnail 요소들 숨기기
       const thumbnails = document.querySelectorAll('.thumbnail');
       
       thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', () => {
           console.log(`${thumbnail.id} 클릭`);
-    
+          
+          // 모든 thumbnail 요소의 opacity를 0으로 설정하여 숨기기
           thumbnails.forEach(thumb => {
-            thumb.setAttribute('visible', 'false');  // 썸네일 숨기기
+            thumb.setAttribute('material', 'opacity: 0');  // 썸네일 숨기기
           });
-    
-          document.getElementById('main05Plane').setAttribute('visible', 'true');  // #main05 표시
+      
+          document.getElementById('main05Plane').setAttribute('visible', true);  // main05Plane 표시
         });
       });
     
